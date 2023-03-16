@@ -6,16 +6,13 @@ namespace ChangeString
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Type a sentence.");
-            string sentence = Console.ReadLine();
+            String header = Console.ReadLine();
 
-            Console.WriteLine("Type a character to remove.");
-            string ChrRem = Console.ReadLine();
+            string remove = Console.ReadLine();
+            char character = char.Parse(remove);
 
-            string character = sentence.Remove(ChrRem);
-            
-
-            Console.WriteLine(character);
+            Console.WriteLine(header);
+            Console.WriteLine(header.Trim( new Char[] { character } ));
         }
     }
 }
