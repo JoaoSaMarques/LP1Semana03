@@ -1,27 +1,51 @@
 ﻿using System;
 
-namespace ArraySums
+namespace ChangeString
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
-            //int[] array = { 1, 2, 3, 4, 5 };
- 
-            //int sum = 0;
-            //Array.ForEach(array, i => sum += i);
- 
-            //Console.WriteLine(sum);
+            //Write sentence here
+            Console.WriteLine("Input Vertical array:");
+            int Hor = int.Parse(Console.ReadLine());
 
-            string[] str = { "1.23", "0.45", "123.4322" };
-            float[] flt = new float[str.Length];
+            //Write
+            Console.WriteLine("Input Horizontal array:");
+            int Ver = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < str.Length; i++)
-            flt[i] = float.Parse(str[i]);
+            float[,] array = new float[Ver, Hor];
 
-            Console.WriteLine(str);
-            
+            for (int i = 0; i < Ver; i++)
+            {
+                for (int j = 0; j < Hor; j++)
+                {
+                    Console.WriteLine("Write the values for [{i}, {j}]: ");
+                    array[i, j] = float.Parse(Console.ReadLine());
+                }
+            }
+
+            //Calculate the arrays line
+            for (int i = 0; i < Ver; i++)
+            {
+                float SumHor = 0;
+                for (int j = 0; j < Hor; j++)
+                {
+                    SumHor += array[i, j];
+                }
+            }
+            //Calculate the arrays in each column
+            for (int j = 0; j < Hor; j++)
+            {
+                float SumVer = 0;
+                for (int i = 0; i < Ver; i++)
+                {
+                    SumVer += array[i, j];
+                }
+            }
+            Console.ReadLine();
+
         }
     }
 }
+
