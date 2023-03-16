@@ -7,7 +7,10 @@ namespace GitBranching
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+<<<<<<< HEAD
             Console.WriteLine("Adeus");
+            Console.WriteLine("Bye");
+>>>>>>> fixprint
         }
     }
 }
