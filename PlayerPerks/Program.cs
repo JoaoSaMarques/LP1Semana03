@@ -3,7 +3,7 @@
 namespace PlayerPerks
 {
     [ Flags ]
-    enum Perks;
+    enum Perks
     {
         NoPerks = 0,
         WaterBreathing = 1,
@@ -16,38 +16,42 @@ namespace PlayerPerks
     {
         static void Main(string[] args)
         {
-            if (args.length == 0)
+
+            string message = Console.ReadLine();
+            char[] charArr = message.ToCharArray();  
+            //If there is nothing in command
+            if (charArr.Length == 0)
             {
+                //You have no perks
                 Console.WriteLine("You have no perks.");
                 return;
             }
-
             Perks Player = Perks.NoPerks;
-
-            foreach(char c in args[0])
+            
+            //For each char in args
+            foreach(char c in charArr)
             {
                 switch (c)
                 {
-                    case "w":
+                    case 'w':
                         Player ^= Perks.WaterBreathing;
                         break;
-                    case "a":
+                    case 'a':
                         Player ^= Perks.AutoHeal;
                         break;
-                    case "s":
+                    case 's':
                         Player ^= Perks.Stealth;
                         break;
-                    case "d":
+                    case 'd':
                         Player ^= Perks.DoubleJump;
                         break;
                     default:
-                        Console.WriteLine("I do not recognize this perk")
+                        Console.WriteLine("I do not recognize this perk");
                         return;
                 }
             }
 
-            Console.WriteLine("You have acquired the following perks: ")
-
+            Console.WriteLine("You have acquired the following perks: ");
             if ((Player & Perks.Stealth) == Perks.Stealth && 
             (Player & Perks.DoubleJump) == Perks.DoubleJump)
             {
