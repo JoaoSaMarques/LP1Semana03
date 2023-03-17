@@ -62,7 +62,7 @@ namespace PlayerPerks
                     //You have flying radiation
                     Console.WriteLine("Flying Radiation!");
                 }
-
+                Console.WriteLine("Press enter to continue/exit");
                 Console.ReadLine();
             }
 
