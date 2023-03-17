@@ -51,6 +51,7 @@ namespace PlayerPerks
                         return;
                 }
             }
+            Console.WriteLine(Player);
             //If you have stealth and double jump
             Console.WriteLine("You have acquired the following perks: ");
             if ((Player & Perks.Stealth) == Perks.Stealth && 
