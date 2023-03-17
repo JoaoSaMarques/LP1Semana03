@@ -16,10 +16,11 @@ namespace PlayerPerks
     {
         static void Main(string[] args)
         {
-
+            //string
             string message = Console.ReadLine();
+            //Convert string to char array
             char[] charArr = message.ToCharArray();  
-            //If there is nothing in command
+            //If there is nothing in array
             if (charArr.Length == 0)
             {
                 //You have no perks
@@ -28,7 +29,7 @@ namespace PlayerPerks
             }
             Perks Player = Perks.NoPerks;
             
-            //For each char in args
+            //For each char in CharArr
             foreach(char c in charArr)
             {
                 switch (c)
@@ -50,15 +51,18 @@ namespace PlayerPerks
                         return;
                 }
             }
-
+            //If you have stealth and double jump
             Console.WriteLine("You have acquired the following perks: ");
             if ((Player & Perks.Stealth) == Perks.Stealth && 
             (Player & Perks.DoubleJump) == Perks.DoubleJump)
             {
+                //You have silent jumper
                 Console.WriteLine("Silent Jumper perk");
             }
+                //if don't you  have autoheal
             if ((Player & Perks.AutoHeal) != Perks.AutoHeal)
             {
+                //print 
                 Console.WriteLine("Not gonna make it!");
             }
 
