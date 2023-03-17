@@ -36,6 +36,7 @@ namespace ChangeString
                 {
                     //Sum Horizontal Array
                     SumHor += array[i, j];
+                    Console.WriteLine(SumHor)
                 }
             }
 
@@ -46,6 +47,7 @@ namespace ChangeString
                 {
                     //Sum Vertical Array
                     SumVer += array[i, j];
+                    Console.WriteLine(SumVer)
                 }
             }
 
