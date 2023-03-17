@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ChangeString
 {
@@ -6,49 +6,18 @@ namespace ChangeString
     {
         static void Main(string[] args)
         {
-            //Write Horizontal Array
-            Console.WriteLine("Input Vertical array:");
-            int Hor = int.Parse(Console.ReadLine());
+            //Write sentence here
+            String header = Console.ReadLine();
 
-            //Write Vertical array
-            Console.WriteLine("Input Horizontal array:");
-            int Ver = int.Parse(Console.ReadLine());
+            //Write letter here
+            string remove = Console.ReadLine();
+            //Converts letter into char
+            char character = char.Parse(remove);
 
-            //Create a two-dimensional array of floats
-            float[,] array = new float[Ver, Hor];
-
-            //While [i] is smaller than Vertical number
-            for (int i = 0; i < Ver; i++)
-            {
-                for (int j = 0; j < Hor; j++)
-                {
-
-                    Console.WriteLine("Position i and j in order.");
-                    //Make Array
-                    array[i, j] = float.Parse(Console.ReadLine());
-                }
-            }
-
-            for (int i = 0; i < Ver; i++)
-            {
-                float SumHor = 0;
-                for (int j = 0; j < Hor; j++)
-                {
-                    //Sum Horizontal Array
-                    SumHor += array[i, j];
-                }
-            }
-
-            for (int j = 0; j < Hor; j++)
-            {
-                float SumVer = 0;
-                for (int i = 0; i < Ver; i++)
-                {
-                    //Sum Vertical Array
-                    SumVer += array[i, j];
-                }
-            }
-
+            //Write sentence
+            Console.WriteLine(header);
+            //Write sentence with char removed
+            Console.WriteLine(header.Trim( new Char[] { character } ));
         }
     }
 }
