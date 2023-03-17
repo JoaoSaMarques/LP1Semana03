@@ -66,7 +66,7 @@ namespace PlayerPerks
                 //print 
                 Console.WriteLine("Not gonna make it!");
             }
-
+            Console.WriteLine("Press enter to continue/exit");
             Console.ReadLine();
 
         }
