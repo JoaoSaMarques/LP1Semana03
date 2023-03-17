@@ -18,7 +18,6 @@ namespace ChangeString
             Console.WriteLine(header);
             //Write sentence with char removed
             Console.WriteLine(header.Trim( new Char[] { character } ));
-            //Test
         }
     }
 }
