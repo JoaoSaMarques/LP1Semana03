@@ -12,7 +12,9 @@ namespace ChangeString
 
             //Ask for char
             Console.WriteLine("Please input a char:");
-            char c = Console.ReadKey().KeyChar;
+            char c = Console.ReadLine()[0];
+
+            
 
             //Replace the letter c in string s with the letter x
             string modifiedString = s.Replace(c, 'x');
