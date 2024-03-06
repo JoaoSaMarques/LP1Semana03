@@ -8,21 +8,18 @@ namespace PowTwoUntil
         {
             PowersOf2Until5();
             PowersOf2Until5();
-            PowersOf2UntilN();
-            PowersOf2UntilN();
+            PowersOf2UntilN(6); 
+            PowersOf2UntilN(4); 
         }
 
         private static void PowersOf2Until5()
         {
-            for(int i = 1; i <= (1 << 5); i = i << 1)
-            {
-                Console.WriteLine(i);
-            }
+            PowersOf2UntilN(5);
         }
 
-        private static void PowersOf2UntilN()
+        private static void PowersOf2UntilN(int n)
         {
-            for(int i = 1; i <= (1 << 5); i = i << 1)
+            for(int i = 1; i <= (1 << n); i = i << 1)
             {
                 Console.WriteLine(i);
             }
