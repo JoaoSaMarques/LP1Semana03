@@ -25,6 +25,33 @@ namespace HeroPerks
                 Console.WriteLine("No perks at all!");
                 return;
             }
+
+            foreach (char t in userInput)
+            {
+                if (t != 'w' && t != 'a' && t != 's' && t != 'd')
+                {
+                    Console.WriteLine("Unknown perk!");
+                    return;
+                }
+            
+                switch (t)
+                {
+                    case 'w':
+                        playerPerks |= PlayerPerks.WaterBreathing;
+                        break;
+                    case 'a':
+                        playerPerks |= PlayerPerks.Stealth;
+                        break;
+                    case 's':
+                        playerPerks |= PlayerPerks.AutoHeal;
+                        break;
+                    case 'd':
+                        playerPerks |= PlayerPerks.DoubleJump;
+                        break;
+                    default:
+                        return;
+                }
+            }
         }
     }
 }
