@@ -5,9 +5,9 @@ namespace PowTwoUntil
     class Program
     {
         /// <summary>
-        /// 
+        /// Main entry point of the program. Calls methods to print powers of 2.
         /// </summary>
-        /// <param name="args">it will go through and call the methods</param>
+        /// <param name="args">Command-line arguments (not used).</param>
         static void Main(string[] args)
         {
             PowersOf2Until5();
@@ -17,7 +17,7 @@ namespace PowTwoUntil
         }
 
         /// <summary>
-        /// 
+        /// Prints powers of 2 up to the 5th power.
         /// </summary>
         private static void PowersOf2Until5()
         {
@@ -25,9 +25,9 @@ namespace PowTwoUntil
         }
 
         /// <summary>
-        /// 
+        /// Prints powers of 2 up to the specified exponent.
         /// </summary>
-        /// <param name="n">Write until it reaches number n</param>
+        /// <param name="n">The exponent. Prints powers of 2 up to 2^n.</param>
         private static void PowersOf2UntilN(int n)
         {
             for(int i = 1; i <= (1 << n); i = i << 1)
