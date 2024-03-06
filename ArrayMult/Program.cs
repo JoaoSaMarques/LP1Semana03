@@ -17,6 +17,7 @@ namespace ArrayMult
             float[,] A = new float[2, 2];
             float[] b = new float[2];
 
+            // For loop to parse arguments in A into float
             for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < 2; j++)
@@ -25,6 +26,7 @@ namespace ArrayMult
                 }
             }
 
+            // For loop to parse arguments in b into a float
             for (int i = 0; i < 2; i++)
             {
                 b[i] = float.Parse(args[4 + i]);
@@ -34,7 +36,7 @@ namespace ArrayMult
             float[] result = MultiplyMatrixByVector(A, b);
 
             // Result of multiplication
-            Console.WriteLine($"A · b = [{result[0]}, {result[1]}]");
+            Console.WriteLine($"A * b = [{result[0]}, {result[1]}]");
         }
 
         //Multiplication process for matrix and vector
@@ -42,6 +44,7 @@ namespace ArrayMult
         {
             float[] result = new float[2];
 
+            //For loop
             for (int i = 0; i < 2; i++)
             {
                 for (int j = 0; j < 2; j++)
