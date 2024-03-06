@@ -1,9 +1,9 @@
-﻿using System;
+﻿﻿using System;
 
 namespace HeroPerks
 {
     [Flags]
-    internal enum PlayerPerks
+    internal enum HeroPerks
     {
         WaterBreathing = 1 << 0,
         Stealth = 1 << 1,
@@ -15,7 +15,7 @@ namespace HeroPerks
     {
         private static void Main(string[] args)
         {
-            PlayerPerks playerPerks = 0;
+            HeroPerks playerPerks = 0;
             
             Console.WriteLine("Please input your desired perks:");
             string userInput = Console.ReadLine();
@@ -25,7 +25,7 @@ namespace HeroPerks
                 Console.WriteLine("No perks at all!");
                 return;
             }
-
+            
             foreach (char t in userInput)
             {
                 if (t != 'w' && t != 'a' && t != 's' && t != 'd')
@@ -37,20 +37,32 @@ namespace HeroPerks
                 switch (t)
                 {
                     case 'w':
-                        playerPerks |= PlayerPerks.WaterBreathing;
+                        playerPerks |= HeroPerks.WaterBreathing;
                         break;
                     case 'a':
-                        playerPerks |= PlayerPerks.Stealth;
+                        playerPerks |= HeroPerks.Stealth;
                         break;
                     case 's':
-                        playerPerks |= PlayerPerks.AutoHeal;
+                        playerPerks |= HeroPerks.AutoHeal;
                         break;
                     case 'd':
-                        playerPerks |= PlayerPerks.DoubleJump;
+                        playerPerks |= HeroPerks.DoubleJump;
                         break;
                     default:
                         return;
                 }
+            }
+            
+            Console.WriteLine($"Player perks: {playerPerks}");
+            
+            if ((playerPerks & (HeroPerks.Stealth | HeroPerks.DoubleJump)) == (HeroPerks.Stealth | HeroPerks.DoubleJump))
+            {
+                Console.WriteLine("Silent jumper!");
+            }
+
+            if ((playerPerks & HeroPerks.AutoHeal) == HeroPerks.AutoHeal)
+            {
+                Console.WriteLine("Not gonna make it!");
             }
         }
     }
