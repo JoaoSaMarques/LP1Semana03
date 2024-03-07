@@ -6,36 +6,45 @@ namespace RPS
     {
         private static void Main(string[] args)
         {
-            int result = RockPaperScissors(args[0], args[1]);
+            // Convert input strings to GameItem enums
+            GameItem player1Choice = Enum.Parse<GameItem>(args[0]);
+            GameItem player2Choice = Enum.Parse<GameItem>(args[1]);
+
+            // Get the result using the updated method
+            GameStatus result = RockPaperScissors(player1Choice, player2Choice);
+
+            // Display the result
             switch (result)
             {
-                case 0:
+                case GameStatus.Draw:
                     Console.WriteLine("It's a draw!");
                     break;
-                case 1:
+                case GameStatus.Player1Wins:
                     Console.WriteLine("Player 1 wins!");
                     break;
-                case 2:
+                case GameStatus.Player2Wins:
                     Console.WriteLine("Player 2 wins!");
                     break;
             }
         }
 
-        private static int RockPaperScissors(string player1, string player2)
+        // Updated RockPaperScissors method using GameItem and GameStatus enums
+        private static GameStatus RockPaperScissors(GameItem player1, GameItem player2)
         {
             if (player1 == player2)
             {
-                return 0; // Draw
+                return GameStatus.Draw;
             }
-            if (((player1 == "Rock") && (player2 == "Scissors")) ||
-                ((player1 == "Scissors") && (player2 == "Paper")) ||
-                ((player1 == "Paper") && (player2 == "Rock")))
+
+            if ((player1 == GameItem.Rock && player2 == GameItem.Scissors) ||
+                (player1 == GameItem.Scissors && player2 == GameItem.Paper) ||
+                (player1 == GameItem.Paper && player2 == GameItem.Rock))
             {
-                return 1; // Player 1 wins
+                return GameStatus.Player1Wins;
             }
             else
             {
-                return 2; // Player 2 wins
+                return GameStatus.Player2Wins;
             }
         }
     }
