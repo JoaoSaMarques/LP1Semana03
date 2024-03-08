@@ -3,7 +3,7 @@
 namespace PlayerAchievements
 {
     [Flags]
-    internal enum HeroPerks
+    internal enum Achievements
     {
         DefeatOptionalBoss = 1
         FindHiddenLevel = 2
@@ -14,7 +14,10 @@ namespace PlayerAchievements
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Achievements achievements = 0
+
+            Console.WriteLine("Please input the number of players.")
+            int n = Console.ReadLine()
         }
     }
 }
