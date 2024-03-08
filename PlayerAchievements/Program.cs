@@ -2,6 +2,9 @@
 
 namespace PlayerAchievements
 {
+    /// <summary>
+    /// Enumeration flags.
+    /// </summary>
     [Flags]
     internal enum Achievements
     {
@@ -12,12 +15,16 @@ namespace PlayerAchievements
 
     class Program
     {
+        /// <summary>
+        /// Main program that handles the functions
+        /// </summary>
+        /// <param name="args">Main component</param>
         static void Main(string[] args)
         {
             Console.WriteLine("Please input the number of players:");
             int n = int.Parse(Console.ReadLine());
 
-            Achievements[] achievementArray = new Achievements[n];
+            Achievements[] AchArray = new Achievements[n];
 
             for (int i = 0; i < n; i++)
             {
@@ -26,9 +33,9 @@ namespace PlayerAchievements
 
                 Achievements playerAchievements = 0;
 
-                foreach (char achievementCode in input)
+                foreach (char t in input)
                 {
-                    switch (achievementCode)
+                    switch (t)
                     {
                         case 'D':
                             playerAchievements |= Achievements.DefeatOptionalBoss;
@@ -40,12 +47,26 @@ namespace PlayerAchievements
                             playerAchievements |= Achievements.FinishGame;
                             break;
                         default:
-                            Console.WriteLine($"Invalid achievement code: {achievementCode}");
+                            Console.WriteLine($"Invalid achievement code: {t}");
                             break;
                     }
                 }
 
-                achievementArray[i] = playerAchievements;
+                AchArray[i] = playerAchievements;
+
+                // Check for "Completionist" status
+                if (playerAchievements == (Achievements.DefeatOptionalBoss | 
+                Achievements.FindHiddenLevel | Achievements.FinishGame))
+                {
+                    Console.WriteLine($"Player {i + 1} is a Completionist!");
+                }
+            }
+            
+            
+            // For each player, print their achievements
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"Player {i + 1}Achievements: {AchArray[i]}");
             }
         }
     }
