@@ -2,23 +2,16 @@
 
 namespace PlayerAchievements
 {
-    /// <summary>
-    /// Enumeration flags.
-    /// </summary>
     [Flags]
     internal enum Achievements
     {
         DefeatOptionalBoss = 1,
         FindHiddenLevel = 2,
-        FinishGame = 3
+        FinishGame = 4
     }
 
     class Program
     {
-        /// <summary>
-        /// Main program that handles the functions
-        /// </summary>
-        /// <param name="args">Main component</param>
         static void Main(string[] args)
         {
             Console.WriteLine("Please input the number of players:");
@@ -53,21 +46,24 @@ namespace PlayerAchievements
                 }
 
                 AchArray[i] = playerAchievements;
-
-                // Check for "Completionist" status
-                if (playerAchievements == (Achievements.DefeatOptionalBoss | 
-                Achievements.FindHiddenLevel | Achievements.FinishGame))
-                {
-                    Console.WriteLine($"Player {i + 1} is a Completionist!");
-                }
             }
-            
-            
+
             // For each player, print their achievements
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine($"Player {i + 1}Achievements: {AchArray[i]}");
+                // Check Completionist status
+                if (AchArray[i] == (Achievements.DefeatOptionalBoss 
+                | Achievements.FindHiddenLevel | Achievements.FinishGame))
+                {
+                    Console.WriteLine($"Player{i + 1} is a Completionist!");
+                }
+
+                else
+                {
+                    Console.WriteLine($"Player{i + 1} Achievements: {AchArray[i]}");
+                }
             }
         }
     }
 }
+
