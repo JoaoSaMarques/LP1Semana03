@@ -22,6 +22,7 @@ namespace PlayerAchievements
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine($"Player {i + 1}: achievements (D, F, G):");
+                // To upper will change lowercase to uppercase for consistency
                 string input = Console.ReadLine().ToUpper();
 
                 Achievements playerAchievements = 0;
