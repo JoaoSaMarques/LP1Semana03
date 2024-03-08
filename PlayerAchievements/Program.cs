@@ -32,7 +32,8 @@ namespace PlayerAchievements
                     switch (t)
                     {
                         case 'D':
-                            playerAchievements |= Achievements.DefeatOptionalBoss;
+                            playerAchievements 
+                            |= Achievements.DefeatOptionalBoss;
                             break;
                         case 'F':
                             playerAchievements |= Achievements.FindHiddenLevel;
@@ -56,12 +57,15 @@ namespace PlayerAchievements
                 if (AchArray[i] == (Achievements.DefeatOptionalBoss 
                 | Achievements.FindHiddenLevel | Achievements.FinishGame))
                 {
-                    Console.WriteLine($"Player{i + 1} is a Completionist!");
+                    Console.WriteLine($"Player{i + 1} " 
+                    + $"Achievements:{AchArray[i]}"
+                    + " You are a true Completionist!");
                 }
 
                 else
                 {
-                    Console.WriteLine($"Player{i + 1} Achievements: {AchArray[i]}");
+                    Console.WriteLine($"Player{i + 1} "
+                    + $"Achievements:{AchArray[i]}");
                 }
             }
         }
