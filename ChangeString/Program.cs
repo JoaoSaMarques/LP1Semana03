@@ -11,6 +11,17 @@ namespace ChangeString
 
             Console.WriteLine("Caráter:");
             char c = char.Parse(Console.ReadLine());
+
+            string result = "";
+
+            foreach (char c2 in s)
+            {
+                if (c2 = c)
+                {
+                    result += 'x';
+                }
+
+            }
         }
     }
 }
