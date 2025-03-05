@@ -21,16 +21,16 @@ namespace HeroPerk
                 switch (c)
                 {
                     case 'w':
-                        playerPerks ^= Perks.WarpShift; // Toggle perk
+                        playerPerks ^= Perks.WarpShift;
                         break;
                     case 'a':
-                        playerPerks ^= Perks.Stealth; // Toggle perk
+                        playerPerks ^= Perks.Stealth;
                         break;
                     case 's':
-                        playerPerks ^= Perks.AutoHeal; // Toggle perk
+                        playerPerks ^= Perks.AutoHeal;
                         break;
                     case 'd':
-                        playerPerks ^= Perks.DoubleJump; // Toggle perk
+                        playerPerks ^= Perks.DoubleJump;
                         break;
                     default:
                         hasInvalidChar = true;
