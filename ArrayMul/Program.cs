@@ -11,6 +11,8 @@ namespace ArrayMul
                 Console.WriteLine("Please provide 6 arguments.");
                 return;
             }
+
+            float[,] A = new float[2, 2];
         }
     }
 }
