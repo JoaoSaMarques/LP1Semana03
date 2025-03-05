@@ -6,7 +6,11 @@ namespace ArrayMul
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello LP1!");
+            if (args.Length != 6)
+            {
+                Console.WriteLine("Please provide 6 arguments.");
+                return;
+            }
         }
     }
 }
