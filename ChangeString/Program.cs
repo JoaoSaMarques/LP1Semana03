@@ -18,13 +18,18 @@ namespace ChangeString
             {
                 if (c2 == c)
                 {
+                    // Replace character with "x"
                     result += 'x';
                 }
 
                 else
                 {
+                    // Keep the original character
                     result += c2;
                 }
+
+                // Print modified version
+                Console.WriteLine($"Será impresso: {result}");
 
             }
         }
