@@ -8,7 +8,7 @@ namespace HeroPerk
         {
             if (args.Length != 1)
             {
-                Console.Write("Please provide a single argument: ");
+                Console.WriteLine("Please provide a single argument.");
                 return;
             }
 
@@ -38,10 +38,32 @@ namespace HeroPerk
                 }
             }
 
+            if (hasInvalidChar)
+            {
+                Console.WriteLine("!Unknown perk!");
+                return;
+            }
 
+            if (playerPerks == 0)
+            {
+                Console.WriteLine("!No perks at all!");
+                Console.WriteLine("!Not gonna make it!");
+                return;
+            }
 
+            // Print the perks
+            Console.WriteLine(playerPerks);
 
+            // Check for specific perks
+            if ((playerPerks & Perks.Stealth) != 0 && (playerPerks & Perks.DoubleJump) != 0)
+            {
+                Console.WriteLine("!Silent jumper!");
+            }
 
+            if ((playerPerks & Perks.AutoHeal) == 0)
+            {
+                Console.WriteLine("!Not gonna make it!");
+            }
         }
     }
 }
