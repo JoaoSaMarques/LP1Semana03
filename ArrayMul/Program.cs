@@ -14,6 +14,11 @@ namespace ArrayMul
 
             float[,] A = new float[2, 2];
             float[] b = new float[2];
+
+            for (int i = 0; i < 2; i++)
+            {
+                
+            }
         }
     }
 }
