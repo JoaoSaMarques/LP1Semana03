@@ -6,7 +6,8 @@ namespace Pow2Until
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello LP1!");
+            PowersOf2Until5();
+            PowersOf2Until5();
         }
 
         private static void PowersOf2Until5()
