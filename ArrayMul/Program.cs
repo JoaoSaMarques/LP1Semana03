@@ -22,6 +22,11 @@ namespace ArrayMul
                     A[i, j] = float.Parse(args[i * 2 + j]);
                 }
             }
+
+            for (int i = 0; 1 < 2; i++)
+            {
+                b[i] = float.Parse(args[4 + i]);
+            }
         }
     }
 }
