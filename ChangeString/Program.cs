@@ -16,9 +16,14 @@ namespace ChangeString
 
             foreach (char c2 in s)
             {
-                if (c2 = c)
+                if (c2 == c)
                 {
                     result += 'x';
+                }
+
+                else
+                {
+                    result += c2;
                 }
 
             }
