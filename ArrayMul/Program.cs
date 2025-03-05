@@ -12,6 +12,7 @@ namespace ArrayMul
                 return;
             }
 
+            // Parse the arguments into a 2x2 matrix A and a 2x1 vector b
             float[,] A = new float[2, 2];
             float[] b = new float[2];
 
@@ -23,9 +24,26 @@ namespace ArrayMul
                 }
             }
 
-            for (int i = 0; 1 < 2; i++)
+            for (int i = 0; i < 2; i++)
             {
                 b[i] = float.Parse(args[4 + i]);
+            }
+
+            // Perform the multiplication A · b
+            float[] result = new float[2];
+            for (int i = 0; i < 2; i++)
+            {
+                result[i] = 0;
+                for (int j = 0; j < 2; j++)
+                {
+                    result[i] += A[i, j] * b[j];
+                }
+            }
+
+            // Print the results
+            for (int i = 0; i < 2; i++)
+            {
+                Console.WriteLine($"| {result[i]:F2} |");
             }
         }
     }
