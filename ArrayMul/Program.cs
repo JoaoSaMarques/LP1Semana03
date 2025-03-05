@@ -19,7 +19,7 @@ namespace ArrayMul
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    
+                    A[i, j] = float.Parse(args[i * 2 + j]);
                 }
             }
         }
