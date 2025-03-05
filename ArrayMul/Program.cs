@@ -13,6 +13,7 @@ namespace ArrayMul
             }
 
             float[,] A = new float[2, 2];
+            float[] b = new float[2];
         }
     }
 }
