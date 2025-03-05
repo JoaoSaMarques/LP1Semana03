@@ -2,10 +2,10 @@
 
 namespace RoPaSci
 {
-    public enum GameItem
+    public enum GameStatus
     {
-        Rock,
-        Paper,
-        Scissors
+        Draw,
+        Player1Wins,
+        Player2Wins
     }
 }
