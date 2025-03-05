@@ -6,9 +6,9 @@ namespace RightSize
     {
         private static void Main(string[] args)
         {
-            for (int i = 0; i < args.Length; i++)
+            foreach (string s in args)
             {
-                Console.WriteLine("", args[i]);
+                Console.WriteLine(c);
             }
         }
     }
