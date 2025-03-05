@@ -6,7 +6,11 @@ namespace HeroPerk
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello LP1!");
+            if (args.Length != 1)
+            {
+                Console.Write("Please provide a single argument: ");
+                return;
+            }
         }
     }
 }
