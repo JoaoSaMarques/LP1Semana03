@@ -6,7 +6,8 @@ namespace ChangeString
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello LP1!");
+            Console.WriteLine("Please write a string:");
+            string s = Console.ReadLine();
         }
     }
 }
