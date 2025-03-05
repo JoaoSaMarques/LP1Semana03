@@ -6,10 +6,10 @@ namespace ChangeString
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("String:");
+            Console.Write("String: ");
             string s = Console.ReadLine();
 
-            Console.WriteLine("Caráter:");
+            Console.Write("Caráter: ");
             char c = char.Parse(Console.ReadLine());
 
             string result = "";
@@ -27,11 +27,10 @@ namespace ChangeString
                     // Keep the original character
                     result += c2;
                 }
-
-                // Print modified version
-                Console.WriteLine($"Será impresso: {result}");
-
             }
+
+            // Print modified version
+            Console.WriteLine($"Será impresso: {result}");
         }
     }
 }
