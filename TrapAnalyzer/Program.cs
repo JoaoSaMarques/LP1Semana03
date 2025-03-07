@@ -23,11 +23,24 @@ namespace TrapAnalyzer
         /// </summary>
         /// <param name="args">The command line arguments.</param>
         /// <returns>The player gear.</returns>
+        /// <summary>
+        /// Parse the command line arguments to get the player gear.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        /// <returns>The player gear.</returns>
         private static PlayerGear ParseGear(string[] args)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+            PlayerGear gear = PlayerGear.None;
+
+            for (int i = 1; i < args.Length; i++)
+            {
+                if (Enum.TryParse(args[i], out PlayerGear parsedGear))
+                {
+                    gear |= parsedGear;
+                }
+            }
+
+            return gear;
         }
 
         /// <summary>
