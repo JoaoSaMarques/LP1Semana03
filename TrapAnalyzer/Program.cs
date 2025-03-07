@@ -57,14 +57,14 @@ namespace TrapAnalyzer
         }
 
         /// <summary>
-        /// Display information on wether the player survived the trap or not.
+        /// Display information on whether the player survived the trap or not.
         /// </summary>
         /// <param name="trap">The trap the player has fallen into.</param>
         private static void DisplayResult(TrapType trap, bool survives)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+            Console.WriteLine(survives
+                ? $"The player survived the {trap}!"
+                : $"The player did not survive the {trap}.");
         }
     }
 }
