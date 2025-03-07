@@ -23,11 +23,6 @@ namespace TrapAnalyzer
         /// </summary>
         /// <param name="args">The command line arguments.</param>
         /// <returns>The player gear.</returns>
-        /// <summary>
-        /// Parse the command line arguments to get the player gear.
-        /// </summary>
-        /// <param name="args">The command line arguments.</param>
-        /// <returns>The player gear.</returns>
         private static PlayerGear ParseGear(string[] args)
         {
             PlayerGear gear = PlayerGear.None;
@@ -48,12 +43,17 @@ namespace TrapAnalyzer
         /// </summary>
         /// <param name="trap">The trap the player falls into.</param>
         /// <param name="gear">The gear the player has.</param>
-        /// <returns>Wether the player survived the trap or not.</returns>
+        /// <returns>Whether the player survived the trap or not.</returns>
         private static bool CanSurviveTrap(TrapType trap, PlayerGear gear)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+            return trap switch
+            {
+                TrapType.FallingRocks => (gear & PlayerGear.Helmet) != 0,
+                TrapType.SpinningBlades => (gear & PlayerGear.Boots) != 0,
+                TrapType.PoisonGas => (gear & PlayerGear.Helmet) != 0,
+                TrapType.LavaPit => (gear & PlayerGear.Boots) != 0,
+                _ => false
+            };
         }
 
         /// <summary>
