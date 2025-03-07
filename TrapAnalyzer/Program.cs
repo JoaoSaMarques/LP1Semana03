@@ -50,7 +50,8 @@ namespace TrapAnalyzer
             {
                 TrapType.FallingRocks => (gear & PlayerGear.Helmet) != 0,
                 TrapType.SpinningBlades => (gear & PlayerGear.Shield) != 0,
-                TrapType.PoisonGas => (gear & PlayerGear.Helmet) != 0,
+                TrapType.PoisonGas => (gear & PlayerGear.Shield) != 0 
+                && (gear & PlayerGear.Helmet) != 0,
                 TrapType.LavaPit => (gear & PlayerGear.Boots) != 0,
                 _ => false
             };
