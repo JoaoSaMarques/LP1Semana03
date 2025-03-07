@@ -63,8 +63,8 @@ namespace TrapAnalyzer
         private static void DisplayResult(TrapType trap, bool survives)
         {
             Console.WriteLine(survives
-                ? $"The player survived the {trap}!"
-                : $"The player did not survive the {trap}.");
+                ? $"Player survives {trap}"
+                : $"Player dies due to {trap}");
         }
     }
 }
