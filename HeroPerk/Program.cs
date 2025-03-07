@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 namespace HeroPerk
 {
@@ -6,63 +6,62 @@ namespace HeroPerk
     {
         private static void Main(string[] args)
         {
-            if (args.Length != 1)
-            {
-                Console.WriteLine("Please provide a single argument.");
-                return;
-            }
-
             string input = args[0];
-            Perks playerPerks = 0;
-            bool hasInvalidChar = false;
-
+            Perks playerPerks = Perks.None;
+            
             foreach (char c in input)
             {
                 switch (c)
                 {
-                    case 'w':
-                        playerPerks ^= Perks.WarpShift;
+                    case 'w': 
+                        playerPerks ^= Perks.WarpShift; 
+                        break; 
+                    case 's': 
+                        playerPerks ^= Perks.Stealth; 
                         break;
-                    case 'a':
-                        playerPerks ^= Perks.Stealth;
+                    case 'a': 
+                        playerPerks ^= Perks.AutoHeal; 
                         break;
-                    case 's':
-                        playerPerks ^= Perks.AutoHeal;
+                    case 'd': 
+                        playerPerks ^= Perks.DoubleJump; 
                         break;
-                    case 'd':
-                        playerPerks ^= Perks.DoubleJump;
-                        break;
-                    default:
-                        hasInvalidChar = true;
-                        break;
+                    default: 
+                        Console.WriteLine("!Unknown perk!");
+                        return;
                 }
             }
-
-            if (hasInvalidChar)
-            {
-                Console.WriteLine("!Unknown perk!");
-                return;
-            }
-
-            if (playerPerks == 0)
+            
+            if (playerPerks == Perks.None)
             {
                 Console.WriteLine("!No perks at all!");
                 Console.WriteLine("!Not gonna make it!");
-                return;
             }
-
-            // Print the perks
-            Console.WriteLine(playerPerks);
-
-            // Check for specific perks
-            if ((playerPerks & Perks.Stealth) != 0 && (playerPerks & Perks.DoubleJump) != 0)
+            else
             {
-                Console.WriteLine("!Silent jumper!");
+                Console.WriteLine(GetPerksString(playerPerks));
+
+                if ((playerPerks & Perks.Stealth) == Perks.Stealth && 
+                    (playerPerks & Perks.DoubleJump) == Perks.DoubleJump)
+                {
+                    Console.WriteLine("!Silent jumper!");
+                }
+
+                if ((playerPerks & Perks.AutoHeal) == 0)
+                {
+                    Console.WriteLine("!Not gonna make it!");
+                }
             }
-
-            if ((playerPerks & Perks.AutoHeal) == 0)
+            
+            static string GetPerksString(Perks perks)
             {
-                Console.WriteLine("!Not gonna make it!");
+                var perkList = new System.Collections.Generic.List<string>();
+
+                if ((perks & Perks.WarpShift) != 0) perkList.Add("WarpShift");
+                if ((perks & Perks.Stealth) != 0) perkList.Add("Stealth");
+                if ((perks & Perks.AutoHeal) != 0) perkList.Add("AutoHeal");
+                if ((perks & Perks.DoubleJump) != 0) perkList.Add("DoubleJump");
+
+                return string.Join(", ", perkList);
             }
         }
     }
